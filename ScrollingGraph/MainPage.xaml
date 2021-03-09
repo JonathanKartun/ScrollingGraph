@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScrollingGraph.MainPage"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:toucher="clr-namespace:TouchTracking"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             >
+
+    <StackLayout>
+        <skia:SKCanvasView x:Name="canvasChartView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" EnableTouchEvents="True" PaintSurface="CanvasChartView_PaintSurface" >
+            <skia:SKCanvasView.Effects>
+                <toucher:TouchEffect TouchAction="TouchEffect_TouchAction" Capture="True" />
+            </skia:SKCanvasView.Effects>
+        </skia:SKCanvasView>
+    </StackLayout>
+
+</ContentPage>
